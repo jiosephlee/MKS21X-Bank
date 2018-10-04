@@ -35,20 +35,3 @@ public class DriverBankAccount{
     }
   }
 }
-
-Notice how clunky this process is?
-Assignment:
-1. Take your bank account and test it with my driver.
-2. Add the following methods:
-
-/*This private method will allow internal methods to check the password easily*/
-private boolean authenticate(String password)
-
-/**Transfer money from this BankAccount to the other only when the password matches, and the withdrawal succeeds.
- *@param other which BankAccount to GIVE the money to
- *@param amount how much money to transfer, negative amounts will make this operation fail.
- *@param password to be checked against the source account, incorrect password will make this operation fail.
- *@return true if successful, false otherwise.
- */
-public boolean transferTo(BankAccount other, double amount, String password)
-

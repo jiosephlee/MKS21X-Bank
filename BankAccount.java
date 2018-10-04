@@ -13,7 +13,7 @@ public class BankAccount{
 
 /*Return a String to be used to display the account data. "ACCOUNT\tBALANCE" */
   public String toString(){
-    return accountID + "\t" + balance;
+    return balance + "\t" + accountID;
   }
 
   public double getBalance(){
@@ -42,9 +42,13 @@ public class BankAccount{
   }
 
   private boolean authenticate(String password){
-    return this.password == Password;
+    return this.password == password;
   }
   public boolean transferTo(BankAccount other, double amount, String password){
     if (this.authenticate(password) && this.withdraw(amount)){
-	return 
+      this.withdraw(amount);
+      other.deposit(amount);
+	    return true;}
+    return false;
+  }
 }
