@@ -5,7 +5,7 @@ public class BankAccount{
   private int accountID;
   private String password;
 
-  public BankAccount( int newaccountID, double newbalance, String newpassword){
+  public BankAccount(double newbalance, int newaccountID, String newpassword){
    balance = newbalance;
    accountID = newaccountID;
    password = newpassword;
@@ -34,10 +34,17 @@ public class BankAccount{
   }
 
   public boolean withdraw(double amount){
-    if (balance - amount > 0){
+    if (balance - amount > 0 && amount >= 0){
       balance -= amount;
       return true;
     }
     return false;
   }
+
+  private boolean authenticate(String password){
+    return this.password == Password;
+  }
+  public boolean transferTo(BankAccount other, double amount, String password){
+    if (this.authenticate(password) && this.withdraw(amount)){
+	return 
 }
